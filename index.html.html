@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Burhani Collection — Gifts, Perfumes & Daily Essentials</title>
+  <meta name="description" content="Burhani Collection: Premium store in Babra for gifts, toys, perfumes, kitchenware, and home essentials." />
+  <style>
+    :root {
+      --accent: #d86a43;
+      --muted: #5b6573;
+      --text: #1f2937;
+      --bg1: #fdfbf9;
+      --bg2: #f7f4f1;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body {
+      font-family: "Poppins", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg1), var(--bg2));
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .brand { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .tagline { color: var(--muted); font-size: 14px; }
+
+    /* Hero section */
+    .hero {
+      margin-top: 32px;
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .hero img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      filter: brightness(0.75);
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      max-width: 700px;
+    }
+    .hero-content h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .hero-content p { font-size: 16px; margin-bottom: 20px; }
+    .cta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn-outline {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.3); }
+
+    /* Intro section */
+    .intro {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+    }
+    .intro h2 { color: var(--accent); margin-bottom: 12px; }
+    .intro p { color: var(--muted); max-width: 700px; margin: 0 auto; }
+
+    /* Product grid */
+    .products { margin-top: 40px; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 14px;
+      text-align: center;
+    }
+    .product-info h4 { margin-bottom: 4px; color: var(--accent); }
+    .product-info p { color: var(--muted); font-size: 13px; }
+
+    /* Contact section */
+    .contact {
+      margin-top: 50px;
+      background: linear-gradient(90deg, #fff, #f8f9fa);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+    .contact h3 { color: var(--accent); margin-bottom: 10px; }
+    .contact p { font-size: 14px; margin-bottom: 6px; }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 18px 0;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid #e2e8f0;
+    }
+    footer strong { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div>
+        <div class="brand">Burhani Collection</div>
+        <div class="tagline">Your One-Stop Shop for Gifts & Everyday Essentials</div>
+      </div>
+      <div>
+        <a class="btn btn-outline" href="tel:+919904952686">?? Call</a>
+        <a class="btn btn-outline" href="mailto:kutubvanparekh@gmail.com">?? Email</a>
+      </div>
+    </header>
+
+    <!-- Hero Banner with Real Image -->
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1519222970733-f546218fa6d7?auto=format&fit=crop&w=1200&q=80" alt="People shopping gifts" />
+      <div class="hero-content">
+        <h1>Welcome to Burhani Collection</h1>
+        <p>Discover gifts, toys, perfumes, kitchenware & much more — everything for your lifestyle under one roof.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://wa.me/919904952686" target="_blank">?? WhatsApp Order</a>
+          <a class="btn btn-outline" href="https://instagram.com/Burhani_collection01" target="_blank">?? Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <h2>About Our Store</h2>
+      <p>Burhani Collection is your trusted local destination in Babra for all gifting and household needs. From elegant perfumes and fun toys to beautiful home decor and kitchenware — we bring style and value together.</p>
+    </section>
+
+    <section class="products">
+      <h2 style="text-align:center;margin-bottom:20px;">Popular Categories</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=600&q=80" alt="Gift items" />
+          <div class="product-info">
+            <h4>Gifts & Souvenirs</h4>
+            <p>Beautiful gifts for every occasion.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1596464716121-7b14e4d37a77?auto=format&fit=crop&w=600&q=80" alt="Toys" />
+          <div class="product-info">
+            <h4>Toys & Games</h4>
+            <p>Fun and engaging toys for all ages.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1618354691270-3c9b36d5b8b6?auto=format&fit=crop&w=600&q=80" alt="Perfumes" />
+          <div class="product-info">
+            <h4>Perfumes & Attar</h4>
+            <p>Fragrances that make a statement.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1606813907291-5f84e31810f6?auto=format&fit=crop&w=600&q=80" alt="Kitchenware" />
+          <div class="product-info">
+            <h4>Kitchenware</h4>
+            <p>Smart essentials for your home.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h3>Contact & Visit</h3>
+      <p><strong>Address:</strong> Near Shreeji Shopping Center, Main Bazar, Babra - 365421</p>
+      <p><strong>Phone:</strong> +91 99049 52686</p>
+      <p><strong>Hours:</strong> Mon–Sat, 9:30 AM – 9:30 PM</p>
+      <iframe src="https://www.google.com/maps?q=Near+Shreeji+Shopping+Center,+Main+Bazar,+Babra&output=embed" width="100%" height="220" style="border:0;border-radius:8px;" loading="lazy"></iframe>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Burhani Collection — All Rights Reserved</div>
+      <div>Credit: <strong>Mr. B_Ammar</strong></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
