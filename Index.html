@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burhani Collection - Your One-Stop Gift Destination</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h2 {
+            color: #2c5aa0;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #2c5aa0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5aa0, #4a7bc8);
+            color: white;
+            padding: 150px 20px 80px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .since-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Shop Photo Section */
+        .shop-photo-section {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .shop-photo-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 5px solid white;
+        }
+
+        .shop-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c5aa0;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .shop-image::before {
+            content: '🏪 Burhani Collection Store Front';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(44, 90, 160, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        .photo-caption {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            color: #2c5aa0;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .photo-highlight {
+            background: linear-gradient(135deg, #2c5aa0, #4a7bc8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+
+        .about h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c5aa0;
+            font-size: 2.8rem;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 4rem;
+            color: #555;
+        }
+
+        .intro-highlight {
+            background: linear-gradient(135deg, #2c5aa0, #4a7bc8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .legacy-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            text-align: center;
+            border-left: 5px solid #2c5aa0;
+        }
+
+        .legacy-section h3 {
+            color: #2c5aa0;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .legacy-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            border-top: 4px solid #2c5aa0;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .feature i {
+            font-size: 3.5rem;
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #2c5aa0;
+            font-size: 2.8rem;
+        }
+
+        .product-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+            opacity: 0;
+            transform: translateY(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #2c5aa0, #4a7bc8);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #2c5aa0;
+        }
+
+        .category-card i {
+            font-size: 3.5rem;
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        /* Ordering Section */
+        .ordering {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .ordering h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #2c5aa0;
+            font-size: 2.8rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            position: relative;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #2c5aa0, #4a7bc8);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c5aa0;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #2c5aa0;
+            font-size: 2.8rem;
+        }
+
+        .contact-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #2c5aa0;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h3 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-item p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: #2c5aa0;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.8rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .social-link.whatsapp {
+            background: #25D366;
+        }
+
+        .social-link.instagram {
+            background: #E4405F;
+        }
+
+        .social-link.facebook {
+            background: #1877F2;
+        }
+
+        /* Floating WhatsApp */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .credit {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 12px 25px;
+                font-size: 1.1rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .features, .product-categories, .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .about h2, .products h2, .ordering h2, .contact h2 {
+                font-size: 2.2rem;
+            }
+            
+            .intro-text {
+                font-size: 1.1rem;
+            }
+            
+            .legacy-section {
+                padding: 2rem;
+            }
+            
+            .shop-image {
+                height: 300px;
+            }
+            
+            .photo-caption {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Burhani Collection</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Burhani Collection</h1>
+            <div class="since-badge">Since 1996</div>
+            <p class="tagline">Your One-Stop Destination for Every Gift & Everyday Need</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('products')">View Products</button>
+                <button class="btn-secondary" onclick="openWhatsApp()">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Photo Section -->
+    <section class="shop-photo-section">
+        <div class="container">
+            <div class="shop-photo-container">
+                <div class="shop-image">
+                    <!-- Aap yahan apni actual photo add kar sakte hain -->
+                    <!-- <img src="1000125767.jpg" alt="Burhani Collection Store" style="width:100%;height:100%;object-fit:cover;"> -->
+                </div>
+            </div>
+            <div class="photo-caption">
+                <span class="photo-highlight">Belt, Waist, Perfume, Gift Articles & A to Z Items</span><br>
+                Located at <span class="photo-highlight">Shreeji Shopping Centre, Main Bazaar Road, Babra</span><br>
+                Your Trusted Store for <span class="photo-highlight">JOCKEY Products & Much More!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Burhani Collection</h2>
+            <div class="about-content">
+                <div class="intro-text">
+                    <p>For over <span class="intro-highlight">two decades</span>, Burhani Collection has been the trusted name in Babra for quality products and exceptional service. Established in <span class="intro-highlight">1996</span>, we have grown from a small local shop to become the premier destination for all your gifting and daily needs.</p>
+                </div>
+                
+                <div class="legacy-section">
+                    <h3>Our Legacy of Excellence</h3>
+                    <p>With <span class="intro-highlight">28 years of dedicated service</span> to the community, Burhani Collection has built a reputation for quality, reliability, and customer satisfaction. Our journey began with a simple vision: to provide the best products at fair prices while maintaining the highest standards of service.</p>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-store"></i>
+                        <h3>In-Store Experience</h3>
+                        <p>Visit our spacious store in Main Bazar, Babra for a personalized shopping experience with expert assistance.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>Digital Convenience</h3>
+                        <p>Order via WhatsApp from the comfort of your home. Share product photos and get instant confirmation.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-gift"></i>
+                        <h3>Extensive Collection</h3>
+                        <p>From traditional gifts to modern essentials, we curate the finest products to meet all your needs.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-users"></i>
+                        <h3>Community Trust</h3>
+                        <p>Built on relationships and trust, we've served generations of families with dedication and care.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Premium Collection</h2>
+            <div class="product-categories">
+                <div class="category-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Gifts & Souvenirs</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Toys & Games</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Watches</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-glasses"></i>
+                    <h3>Goggles</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-spray-can"></i>
+                    <h3>Attar & Perfume</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Hozery</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Kitchenware</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Bags & Purses</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Home Decor</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Daily Essentials</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Order -->
+    <section class="ordering">
+        <div class="container">
+            <h2>How to Order</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Share Product</h3>
+                    <p>Share product photo or name via Call/WhatsApp on our primary number</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get Confirmation</h3>
+                    <p>Our team confirms price, availability, and delivery details instantly</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Make Payment</h3>
+                    <p>Complete your order with secure local payment options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Visit Us Today</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Store Address</h3>
+                            <p>Near Shreeji Shopping Center, Main Bazar, Babra – 365421</p>
+                            <p><small>Easy to locate in the heart of Babra market</small></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Contact Numbers</h3>
+                            <p>📞 +91 99049 52686 (Primary/WhatsApp)</p>
+                            <p>📞 +91 99245 31558</p>
+                            <p>📞 +91 99049 65153</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Address</h3>
+                            <p>kutubvanparekh@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Saturday: 9:30 AM – 9:30 PM</p>
+                            <p><small>28 years of consistent service</small></p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/burhani_collection01?igsh=MTRtM2kxbDdqNDc3MQ==" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link facebook" onclick="openFacebook()">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/919904952686?text=Hello!%20I%20would%20like%20to%20place%20an%20order%20from%20Burhani%20Collection." target="_blank" class="social-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919904952686?text=Hello!%20I%20would%20like%20to%20place%20an%20order%20from%20Burhani%20Collection." target="_blank" class="float-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Burhani Collection. All rights reserved.</p>
+                <p>Serving the community with excellence since 1996</p>
+                <div class="credit">
+                    <p>Website Design & Development: Credit by Mr.b_ammar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add click event listeners to all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Sticky navigation
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = '#fff';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.feature, .category-card, .step');
+            
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // WhatsApp function - FIXED
+        function openWhatsApp() {
+            const phone = '919904952686';
+            const message = 'Hello! I would like to place an order from Burhani Collection.';
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Instagram function - FIXED with your actual link
+        function openInstagram() {
+            window.open('https://www.instagram.com/burhani_collection01?igsh=MTRtM2kxbDdqNDc3MQ==', '_blank');
+        }
+
+        // Facebook function
+        function openFacebook() {
+            alert('Facebook page link will be added soon!');
+        }
+
+        // Add click event to order buttons
+        document.querySelectorAll('.btn-secondary').forEach(button => {
+            button.addEventListener('click', openWhatsApp);
+        });
+
+        // Add click event to Instagram link
+        document.querySelector('.social-link.instagram').addEventListener('click', openInstagram);
+
+        // Initialize animations when page loads
+        window.addEventListener('load', () => {
+            console.log('Burhani Collection website loaded successfully!');
+            
+            // Aap yahan apni actual photo add kar sakte hain
+            // const shopImage = document.querySelector('.shop-image');
+            // shopImage.innerHTML = '<img src="1000125767.jpg" alt="Burhani Collection Store" style="width:100%;height:100%;object-fit:cover;">';
+        });
+    </script>
+</body>
+</html>
